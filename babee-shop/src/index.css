@@ -16,3 +16,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1 {
+  font-size: 2em;
+  color: #FFCA3A;
+}
+.primary-button {
+  background-color: #FFCA3A;
+  color: black;
+  padding: 0.5em 1em;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
