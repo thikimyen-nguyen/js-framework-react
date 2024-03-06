@@ -27,4 +27,13 @@ h1 {
   font-size: 1.3rem;
   border-radius: 10px;
   font-weight: 600;
+  cursor: pointer;
+ 
+}
+.primary-button:hover {
+  background-color: lighten(#FFCA3A, 20%);
+}
+
+.error-border {
+  border: solid 2px red;
 }
