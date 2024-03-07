@@ -4,6 +4,7 @@ import { Routes, Route} from "react-router-dom"
 import { ContactForm } from '../ContactForm';
 import { ProductsList, products } from '../Products';
 import { Search } from '../SearchBar';
+import { CartDetail } from '../CheckoutPage';
 
 function HomePage() {
   return <div>
@@ -14,7 +15,9 @@ function HomePage() {
 function ContactPage() {
   return <ContactForm />
 }
-
+function CheckoutPage() {
+  return <CartDetail />
+}
 function App() {
   return (
     <div>
@@ -22,6 +25,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
+
         </Route>
       </Routes>
     </div>

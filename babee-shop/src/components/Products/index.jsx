@@ -34,8 +34,8 @@ export function ProductsList({ products }) {
                 alt={product.name}
                 className="w-full h-48 object-cover object-center group-hover:opacity-75"
               />
-              <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">${product.price}</p>
+              <h2 className="mt-4 text-primary">{product.name}</h2>
+              <p className="mt-1 text-lg font-medium text-gray-900">Kr{product.price}</p>
             </div>
           </div>
         ))}

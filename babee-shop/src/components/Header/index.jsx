@@ -12,16 +12,16 @@ export function Header() {
     setIsOpen(!isOpen);
     };
     return (
-        <header className="text-white p-4">
+        <header className="text-white p-4 sticky top-0 bg-gray">
             <div className='flex justify-between'>
                 <div className='flex'>
-                    <div className="self-center">
+                    <Link to="/" className="self-center">
                         <img
                             src= {logo}
                             alt="Bshop Logo"
                             className="w-36"
                         />
-                    </div>
+                    </Link>
                     <nav>
                         <ul className="p-4 hidden md:flex" id='navbar'>
                             <li className='p-4 text-xl'><NavLink to="/">HOME</NavLink></li>

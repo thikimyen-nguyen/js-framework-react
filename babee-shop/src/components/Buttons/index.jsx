@@ -4,3 +4,8 @@ export function PrimaryButton({label}) {
         <button className={styles.primaryButton}>{label}</button>
     );
 }
+export function SecondaryButton({label}) {
+    return (
+        <button className={styles.secondaryButton}>{label}</button>
+    );
+}
