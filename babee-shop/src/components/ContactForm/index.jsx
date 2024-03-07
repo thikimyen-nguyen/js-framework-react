@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { PrimaryButton } from '../Buttons';
 const schema = yup
     .object({
         fullName: yup
@@ -84,7 +85,7 @@ export function ContactForm() {
 
                 </div>
                 <div className="mt-4 text-center">
-                <button type="submit" className="primary-button">Submit</button>
+                <PrimaryButton label='Submit' />
                 </div>
             </form>
         </div>

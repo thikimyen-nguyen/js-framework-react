@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import logo from './bshop-logo.png';
 import { CartIcon } from '../CartIcon';
+import { Link, NavLink } from "react-router-dom"
+import "./index.css"
+
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +23,9 @@ export function Header() {
                         />
                     </div>
                     <nav>
-                        <ul className="p-4 hidden md:flex">
-                            <li className='p-4 text-xl'>HOME</li>
-                            <li className='p-4 text-xl'>CONTACT</li>
+                        <ul className="p-4 hidden md:flex" id='navbar'>
+                            <li className='p-4 text-xl'><NavLink to="/">HOME</NavLink></li>
+                            <li className='p-4 text-xl'><NavLink to="/contact">CONTACT</NavLink></li>
                         </ul>
                     </nav>
                     <div className="md:hidden self-center">
@@ -50,9 +53,9 @@ export function Header() {
        
           {isOpen && (
             <nav>
-                <ul className="md:hidden bg-black p-4 w-fit">
-                    <li className='p-4 text-xl'>HOME</li>
-                    <li className='p-4 text-xl'>CONTACT</li>
+                <ul className="md:hidden bg-black p-4 w-fit"  id='navbar'>
+                    <li className='p-4 text-xl'><NavLink to="/">HOME</NavLink></li>
+                    <li className='p-4 text-xl'><NavLink to="/contact">CONTACT</NavLink></li>
                 </ul>
             </nav>
           )}

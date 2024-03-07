@@ -1,10 +1,29 @@
 import './index.css';
 import { Layout } from '../Layout';
+import { Routes, Route} from "react-router-dom"
+import { ContactForm } from '../ContactForm';
+import { ProductsList } from '../Products';
+import { Search } from '../SearchBar';
+
+function HomePage() {
+  return <div>
+    <Search />
+    <ProductsList />
+  </div>
+}
+function ContactPage() {
+  return <ContactForm />
+}
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

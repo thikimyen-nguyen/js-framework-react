@@ -1,0 +1,13 @@
+.primaryButton {
+    background-color: #FFCA3A;
+    color: black;
+    padding: 0.5em 1em;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+   
+  }
+  .primaryButton:hover {
+    background-color: lighten(#FFCA3A, 20%);
+  }
