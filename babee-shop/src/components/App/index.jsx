@@ -2,13 +2,13 @@ import './index.css';
 import { Layout } from '../Layout';
 import { Routes, Route} from "react-router-dom"
 import { ContactForm } from '../ContactForm';
-import { ProductsList } from '../Products';
+import { ProductsList, products } from '../Products';
 import { Search } from '../SearchBar';
 
 function HomePage() {
   return <div>
     <Search />
-    <ProductsList />
+    <ProductsList products={products}  />
   </div>
 }
 function ContactPage() {
