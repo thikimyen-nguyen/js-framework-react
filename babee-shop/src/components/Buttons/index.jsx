@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
-export function PrimaryButton({label}) {
+export function PrimaryButton({label, onClick}) {
     return (
-        <button className={styles.primaryButton}>{label}</button>
+        <button className={styles.primaryButton} onClick={onClick}>{label}</button>
     );
 }
 export function SecondaryButton({label}) {

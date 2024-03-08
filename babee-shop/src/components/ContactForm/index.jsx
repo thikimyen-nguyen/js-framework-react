@@ -36,7 +36,7 @@ export function ContactForm() {
     }
 
     return (
-        <div className="min-h-screen ">
+        <div>
             <h1>Contact Form</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="flex-col md:w-2/4 content-center mx-auto">
                 <div className="mb-4">

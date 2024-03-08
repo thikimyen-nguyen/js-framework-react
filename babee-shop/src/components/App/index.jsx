@@ -4,7 +4,8 @@ import { Routes, Route} from "react-router-dom"
 import { ContactForm } from '../ContactForm';
 import { ProductsList, products } from '../Products';
 import { Search } from '../SearchBar';
-import { CartDetail } from '../CheckoutPage';
+import { CartDetail } from '../CartDetail';
+import CheckoutSuccess from '../CheckoutMessage';
 
 function HomePage() {
   return <div>
@@ -18,6 +19,9 @@ function ContactPage() {
 function CheckoutPage() {
   return <CartDetail />
 }
+function CheckoutSuccessPage() {
+  return <CheckoutSuccess />
+}
 function App() {
   return (
     <div>
@@ -26,7 +30,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
-
+          <Route path="checkoutSuccess" element={<CheckoutSuccessPage />} />
         </Route>
       </Routes>
     </div>
