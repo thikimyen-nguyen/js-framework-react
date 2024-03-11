@@ -2,7 +2,7 @@ import './index.css';
 import { Layout } from '../Layout';
 import { Routes, Route} from "react-router-dom"
 import { ContactForm } from '../ContactForm';
-import { ProductsList, products } from '../Products';
+import { ProductsList } from '../Products';
 import { Search } from '../SearchBar';
 import { CartDetail } from '../CartDetail';
 import CheckoutSuccess from '../CheckoutMessage';
@@ -10,7 +10,7 @@ import CheckoutSuccess from '../CheckoutMessage';
 function HomePage() {
   return <div>
     <Search />
-    <ProductsList products={products}  />
+    <ProductsList  />
   </div>
 }
 function ContactPage() {
