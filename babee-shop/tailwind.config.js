@@ -10,6 +10,7 @@ module.exports = {
       'white': '#ffffff',
       'red': '#A60810',
       'gray': '#262522',
+      'hover': '#FFDE85',
     },
   },
   plugins: [],

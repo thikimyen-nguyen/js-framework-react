@@ -15,7 +15,7 @@ export function ProductsList() {
       <h1>ALL PRODUCTS</h1>
       <div className="flex flex-wrap">
         {products.map((product) => (
-         <ProductCard  product={product}/>
+         <ProductCard key={product.id} product={product}/>
         ))}
       </div>
     </div>

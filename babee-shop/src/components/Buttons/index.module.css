@@ -8,12 +8,10 @@
     cursor: pointer;
    margin-right: 0.3em;
   }
-  .primaryButton:hover {
-    background-color: lighten(#FFCA3A, 20%);
-  }
+ 
   .secondaryButton {
     background-color: black;
-    color: white;
+    color: #FFCA3A;
     padding: 0.5em 1em;
     font-size: 1.3rem;
     border-radius: 10px;

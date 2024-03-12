@@ -1,7 +1,7 @@
 // src/Search.js
 
 import React, { useState } from 'react';
-import { PrimaryButton } from '../Buttons';
+import { PrimaryButton, SecondaryButton } from '../Buttons';
 
 export function Search() {
     const [query, setQuery] = useState('');
@@ -20,7 +20,7 @@ export function Search() {
             className="p-3 border border-gray-300 rounded-lg mr-2"
         />
         
-        <PrimaryButton onClick={handleSearch} label='Search' />
+        <SecondaryButton onClick={handleSearch} label='Search' />
         </div>
     );
 }
