@@ -7,29 +7,31 @@ import ProductCard from "./productCard";
 
 
 export function ProductsList() {
-    const { products, isError, isLoading, fetchProducts } = useProductsStore();
+  const { products, isError, isLoading, fetchProducts } = useProductsStore();
 
-    useEffect(() => {
-        fetchProducts(allProductsUrl);
-      }, [fetchProducts]);
-    
-    if (isError) {
-        return <div>
-            <ErrorHandling />
-        </div>
-    }
-    if (isLoading) {
-        return (
-            <div>
-                <Loader />
-            </div>
-        )
-    }
+  useEffect(() => {
+      fetchProducts(allProductsUrl);
+    }, [fetchProducts]);
+  
+  if (isError) {
+      return <div>
+          <ErrorHandling />
+      </div>
+  }
+  if (isLoading) {
+      return (
+          <div>
+              <Loader />
+          </div>
+      )
+  }
+  console.log(products)
+
   return (
     <div>
       <h1>ALL PRODUCTS</h1>
       <div className="flex flex-wrap">
-        {products.map((product) => (
+        {products?.map((product) => (
          <ProductCard key={product.id} product={product}/>
         ))}
       </div>
