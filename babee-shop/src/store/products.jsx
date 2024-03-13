@@ -1,18 +1,25 @@
 import { create } from 'zustand';
-import { allProductsUrl } from '../api';
 
 
 const useProductsStore = create((set) => ({
   
   products: [],
-  cart: [],
-  fetchProducts: async () => {
-    const response = await fetch(allProductsUrl);
-    const json = await response.json();
-    set((state) => ({ ...state, products: json.data }));
-    console.log(json.data);
-  },
+  isLoading: false,
+  isError: false,
+  fetchProducts: async (url) => {
+    set({ isLoading: true, isError: false });
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      set({ products: json.data });
+    } catch (error) {
+      set({ isError: true });
+    } finally {
+      set({ isLoading: false });
+    }
+  }
   
 }));
 
 export default useProductsStore;
+

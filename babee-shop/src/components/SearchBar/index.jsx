@@ -1,7 +1,7 @@
 // src/Search.js
 
 import React, { useState } from 'react';
-import { PrimaryButton, SecondaryButton } from '../Buttons';
+import { PrimaryButton } from '../Buttons';
 
 export function Search() {
     const [query, setQuery] = useState('');
@@ -11,7 +11,7 @@ export function Search() {
     };
 
     return (
-        <div className="flex my-4 justify-center">
+        <div className="flex mb-8 justify-center">
         <input
             type="text"
             placeholder="Search..."
@@ -20,7 +20,7 @@ export function Search() {
             className="p-3 border border-gray-300 rounded-lg mr-2"
         />
         
-        <SecondaryButton onClick={handleSearch} label='Search' />
+        <PrimaryButton onClick={handleSearch} label='Search' />
         </div>
     );
 }
