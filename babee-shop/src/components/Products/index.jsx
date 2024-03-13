@@ -1,20 +1,31 @@
-import useProductsStore from "../../store/products";
+import { allProductsUrl } from "../../api";
+import useFetch from "../../hooks/useFetch";
+import ErrorHandling from "../ErrorHandle";
+import Loader from "../Loader";
 import ProductCard from "./Product/productCard";
-import { useEffect } from 'react';
 
 
 export function ProductsList() {
-    const { products, fetchProducts } = useProductsStore();
+    const { data, isError, isLoading } = useFetch(allProductsUrl);
 
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
-
+    if (isError) {
+        return <div>
+            <ErrorHandling />
+        </div>
+    }
+    if (isLoading) {
+        return (
+            <div>
+                <Loader />
+            </div>
+        )
+    }
+  
   return (
     <div>
       <h1>ALL PRODUCTS</h1>
       <div className="flex flex-wrap">
-        {products.map((product) => (
+        {data.map((product) => (
          <ProductCard key={product.id} product={product}/>
         ))}
       </div>
