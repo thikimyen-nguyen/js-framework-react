@@ -1,9 +1,7 @@
-import { create } from 'zustand';
-import { allProductsUrl } from '../api';
-
+import { create } from "zustand";
+import { allProductsUrl } from "../api";
 
 const useProductsStore = create((set) => ({
-  
   products: [],
   singleProduct: {},
   isLoading: false,
@@ -20,7 +18,7 @@ const useProductsStore = create((set) => ({
       set({ isLoading: false });
     }
   },
-  fetchProductById: async(id) => {
+  fetchProductById: async (id) => {
     const singleProductUrl = `${allProductsUrl}/${id}`;
     set({ isLoading: true, isError: false });
     try {
@@ -32,9 +30,7 @@ const useProductsStore = create((set) => ({
     } finally {
       set({ isLoading: false });
     }
-  }
-  
+  },
 }));
 
 export default useProductsStore;
-
