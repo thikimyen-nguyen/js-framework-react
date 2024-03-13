@@ -3,11 +3,10 @@ import { allProductsUrl } from "../../api";
 import useProductsStore from "../../store/products";
 import ErrorHandling from "../ErrorHandle";
 import Loader from "../Loader";
-import ProductCard from "./Product/productCard";
+import ProductCard from "./productCard";
 
 
 export function ProductsList() {
-    // const { data, isError, isLoading } = useFetch(allProductsUrl);
     const { products, isError, isLoading, fetchProducts } = useProductsStore();
 
     useEffect(() => {

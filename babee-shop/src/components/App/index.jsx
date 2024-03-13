@@ -6,6 +6,7 @@ import { ProductsList } from '../Products';
 import { Search } from '../SearchBar';
 import { CartDetail } from '../CartDetail';
 import CheckoutSuccess from '../CheckoutMessage';
+import SingleProduct from '../Products/Product';
 
 function HomePage() {
   return <div>
@@ -22,6 +23,10 @@ function CheckoutPage() {
 function CheckoutSuccessPage() {
   return <CheckoutSuccess />
 }
+function ProductPage() {
+  return <SingleProduct />
+}
+
 function App() {
   return (
     <div>
@@ -31,6 +36,8 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
           <Route path="checkoutSuccess" element={<CheckoutSuccessPage />} />
+          <Route path=":id" element={<ProductPage />} />
+
         </Route>
       </Routes>
     </div>

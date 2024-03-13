@@ -1,5 +1,6 @@
 import React from 'react'
-import { PrimaryButton } from '../../Buttons'
+import { PrimaryButton } from '../Buttons'
+import { Link } from 'react-router-dom'
 
 function ProductCard({
     product: { id, title, discountedPrice, image }
@@ -14,7 +15,7 @@ function ProductCard({
             />
             <h2 className="mt-4 text-primary">{title}</h2>
             <p className="m-2 text-lg font-medium text-right">Kr{discountedPrice}</p>
-            <div className='text-center'><PrimaryButton label='View Product' /></div>
+            <Link key={id} to={`/${id}`} className='text-center'><PrimaryButton label='View Product' /></Link>
         </div>
     </div>
   )
