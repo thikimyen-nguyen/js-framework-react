@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import ErrorHandling from "../../ErrorHandle";
 import Loader from "../../Loader";
 import { PrimaryButton } from "../../Buttons";
+import Discount from "../../DiscountNote";
 
 function SingleProduct() {
   const { singleProduct, isError, isLoading, fetchProductById } =
@@ -32,11 +33,11 @@ function SingleProduct() {
     <section className="overflow-hidden ">
       <div className="container mx-auto">
         <div className="lg:w-4/5 mx-auto md:flex ">
-          <div className="md:flex-1 w-80 mx-auto">
+          <div className="w-80 mx-auto">
             <img
               src={singleProduct?.image?.url}
               alt={singleProduct?.title}
-              className="w-80"
+              className="w-full"
             />
           </div>
           <div className="w-full px-6 md:flex-1">
@@ -50,8 +51,26 @@ function SingleProduct() {
               </span>
             </div>
             <p>{singleProduct.description}</p>
-            <div className="text-center my-5">
-              <PrimaryButton label="Add to Cart" />
+            {singleProduct.discountedPrice !== singleProduct.price && (
+              <div className="my-3 flex items-center">
+                <Discount price={singleProduct.price} discountedPrice={singleProduct.discountedPrice} />
+                <span className="ml-5 line-through text-white text-lg">Nok {singleProduct.price}</span>
+              </div>
+            )}
+           
+            <div className="m-auto my-5 flex items-center justify-between">
+              {singleProduct.discountedPrice !== singleProduct.price ? (
+                <div className="text-2xl text-primary m-3">
+                  Nok {singleProduct.discountedPrice} 
+                </div>
+              ) : (
+                <div className="text-2xl text-primary">
+                  Nok {singleProduct.discountedPrice}
+                </div>
+              )}
+              <div className="self-right">
+                <PrimaryButton label="Add to Cart" />
+              </div>
             </div>
           </div>
         </div>
