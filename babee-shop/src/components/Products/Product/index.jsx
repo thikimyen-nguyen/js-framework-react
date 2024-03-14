@@ -34,18 +34,18 @@ function SingleProduct() {
         <div className="lg:w-4/5 mx-auto md:flex ">
           <div className="md:flex-1 w-80 mx-auto">
             <img
-              src={singleProduct.image.url}
-              alt={singleProduct.title}
+              src={singleProduct?.image?.url}
+              alt={singleProduct?.title}
               className="w-80"
             />
           </div>
           <div className="w-full px-6 md:flex-1">
-            <h1 className=" mb-5">{singleProduct.title}</h1>
+            <h1 className=" mb-5">{singleProduct?.title}</h1>
             <div className="flex mb-4">
               <span className="flex items-center">
                 Rating:
                 <span className="text-primary ml-3">
-                  {singleProduct.rating}/5
+                  {singleProduct?.rating}/5
                 </span>
               </span>
             </div>

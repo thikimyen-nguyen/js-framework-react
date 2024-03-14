@@ -4,7 +4,7 @@ import useProductsStore from "../../store/products";
 import ErrorHandling from "../ErrorHandle";
 import Loader from "../Loader";
 import ProductCard from "./productCard";
-import { PrimaryButton } from "../Buttons";
+// import { PrimaryButton } from "../Buttons";
 
 
 export function ProductsList() {
@@ -42,24 +42,24 @@ const handleSearchChange = (event) => {
   setSearchResults(filteredProducts);
 };
 
-const handleSearchClick = () => {
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchInput.toLowerCase())
-  );
-  setSearchResults(filteredProducts);
-};
+// const handleSearchClick = () => {
+//   const filteredProducts = products.filter((product) =>
+//     product.title.toLowerCase().includes(searchInput.toLowerCase())
+//   );
+//   setSearchResults(filteredProducts);
+// };
   return (
     <div>
-      <div className="flex mb-8 justify-center">
+      <div className="mb-8 text-center">
           <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search products..."
               value={searchInput}
               onChange={handleSearchChange}
-              className="p-3 border text-black rounded-lg mr-2"
+              className="w-3/4 md:w-1/2 lg:w-1/3 p-3 border border-primary text-white bg-black rounded-lg"
           />
           
-          <PrimaryButton onClick={handleSearchClick} label='Search' />
+          {/* <PrimaryButton onClick={handleSearchClick} label='Search' /> */}
       </div>
       {searchInput === '' ? (
         <h1 className="font-bold mb-4">All Products</h1>
