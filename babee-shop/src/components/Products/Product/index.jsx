@@ -40,7 +40,7 @@ function SingleProduct() {
             />
           </div>
           <div className="w-full px-6 md:flex-1">
-            <h1 className=" mb-1">{singleProduct.title}</h1>
+            <h1 className=" mb-5">{singleProduct.title}</h1>
             <div className="flex mb-4">
               <span className="flex items-center">
                 Rating:
@@ -50,7 +50,7 @@ function SingleProduct() {
               </span>
             </div>
             <p>{singleProduct.description}</p>
-            <div className="text-center">
+            <div className="text-center my-5">
               <PrimaryButton label="Add to Cart" />
             </div>
           </div>
