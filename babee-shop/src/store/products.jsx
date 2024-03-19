@@ -12,7 +12,7 @@ const useProductsStore = create((set) => ({
     try {
       const response = await fetch(url);
       const json = await response.json();
-      set({ products: json.data });
+      set((state) => ({ ...state, products: json.data }));
     } catch (error) {
       set({ isError: true });
     } finally {
@@ -25,8 +25,8 @@ const useProductsStore = create((set) => ({
     try {
       const response = await fetch(singleProductUrl);
       const json = await response.json();
-      set({ singleProduct: json.data });
-      set({ productReviews: json.data.reviews})
+      set((state) => ({ ...state, singleProduct: json.data }));
+      set((state) => ({ productReviews: json.data.reviews}));
     } catch (error) {
       set({ isError: true });
     } finally {

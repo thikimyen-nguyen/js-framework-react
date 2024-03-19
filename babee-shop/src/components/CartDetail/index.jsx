@@ -5,7 +5,7 @@ export function CartDetail() {
     
     return (
     <div className="flex-col">
-        <h1>YOUR CART</h1>
+        <h1>Your Cart</h1>
         <div className="text-center">
         <Link to='/'><SecondaryButton label="Shop More"/></Link>
         <Link to='/checkoutSuccess'><PrimaryButton label="Check Out" /></Link>
