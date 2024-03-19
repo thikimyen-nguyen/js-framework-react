@@ -2,7 +2,7 @@
 function Discount({price, discountedPrice}) {
   return (
     <div className="bg-red p-3 rounded-tl-lg rounded-br-lg text-center">
-      Discount {((price - discountedPrice) / price * 100).toFixed()}%
+      Sale {((price - discountedPrice) / price * 100).toFixed()}%
     </div>
   )
 }
