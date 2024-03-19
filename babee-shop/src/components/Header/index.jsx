@@ -12,7 +12,7 @@ export function Header() {
     setIsOpen(!isOpen);
     };
     return (
-        <header className="text-white p-4 sticky top-0 bg-gray">
+        <header className="text-white p-4 sticky top-0 bg-gray z-10">
             <div className='flex justify-between'>
                 <div className='flex'>
                     <Link to="/" className="self-center">

@@ -19,7 +19,11 @@ code {
 h1 {
   font-size: 2em;
   color: #FFCA3A;
-  text-align: center;
+ 
+}
+h2 {
+  font-size: 1.5em;
+  color: #FFCA3A;
 }
 
 

@@ -6,6 +6,7 @@ const useProductsStore = create((set) => ({
   singleProduct: {},
   isLoading: false,
   isError: false,
+  productReviews: [],
   fetchProducts: async (url) => {
     set({ isLoading: true, isError: false });
     try {
@@ -25,6 +26,7 @@ const useProductsStore = create((set) => ({
       const response = await fetch(singleProductUrl);
       const json = await response.json();
       set({ singleProduct: json.data });
+      set({ productReviews: json.data.reviews})
     } catch (error) {
       set({ isError: true });
     } finally {
