@@ -5,6 +5,7 @@
     background-color: #262522;
     color: white;
     min-height: 100vh;
+    
 }
 .pageBody {
     flex-grow: 1;

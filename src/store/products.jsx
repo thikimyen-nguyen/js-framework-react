@@ -26,7 +26,7 @@ const useProductsStore = create((set) => ({
       const response = await fetch(singleProductUrl);
       const json = await response.json();
       set((state) => ({ ...state, singleProduct: json.data }));
-      set((state) => ({ productReviews: json.data.reviews}));
+      set((state) => ({ ...state, productReviews: json.data.reviews}));
     } catch (error) {
       set({ isError: true });
     } finally {

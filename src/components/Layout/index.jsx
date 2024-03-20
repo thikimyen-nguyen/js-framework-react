@@ -5,13 +5,16 @@ import style from "./index.module.css";
 
 export function Layout() {
     return (
-        <div className={style.pageWrapper}>
-            <Header />
-            <div className={style.pageBody}>
-                <Outlet />
+        <div className="max-w-screen-xl mx-auto">
+            <div className={style.pageWrapper}>
+                <Header />
+                <div className={style.pageBody}>
+                    <Outlet />
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
+        
        
     );
 }

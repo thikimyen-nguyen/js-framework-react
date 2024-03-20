@@ -25,7 +25,7 @@ function ProductPage() {
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
