@@ -18,7 +18,7 @@ function SingleProduct() {
   let { id } = useParams();
   useEffect(() => {
     fetchProductById(id);
-  }, [fetchProductById]);
+  }, [fetchProductById, id]);
 
   if (isError) {
     return (
