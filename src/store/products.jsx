@@ -1,13 +1,17 @@
 import { create } from "zustand";
 import { allProductsUrl } from "../api";
+const getInitialCartState = () => {
+  const storedCart = localStorage.getItem('cart');
+  return storedCart ? JSON.parse(storedCart) : [];
+};
 
-const useProductsStore = create((set) => ({
+const useProductsStore = create((set, get) => ({
   products: [],
   singleProduct: {},
   isLoading: false,
   isError: false,
   productReviews: [],
-  cart: [],
+  cart: getInitialCartState(),
   fetchProducts: async (url) => {
     set({ isLoading: true, isError: false });
     try {
@@ -57,12 +61,16 @@ const useProductsStore = create((set) => ({
       localStorage.setItem('cart', JSON.stringify(updatedCart));
       console.log(updatedCart);
       
-      return { cart: updatedCart };
+      return { ...state, cart: updatedCart };
     });
+  
   },
 
-        
-
+  getTotalNumberOfItemsInCart: () => { 
+    const cart = get().cart; 
+    return cart ? cart.length : 0;
+  },
+  
   
   
   
