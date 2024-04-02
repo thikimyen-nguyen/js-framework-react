@@ -59,7 +59,10 @@ const useProductsStore = create((set) => ({
       
       return { cart: updatedCart };
     });
-  }
+  },
+
+        
+
   
   
   
