@@ -84,6 +84,9 @@ const useProductsStore = create((set, get) => ({
     }
     return cart.reduce((total, item) => total + (item.discountedPrice * item.quantity), 0).toFixed(2);
   },
-}));
+  clearCart: () => {
+    set({ cart: [] }); 
+    localStorage.removeItem('cart'); 
+  },}));
 
 export default useProductsStore;

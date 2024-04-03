@@ -28,7 +28,11 @@ function CartItem({
 
 export function CartDetail() {
   const cart = JSON.parse(localStorage.getItem("cart"));
-const {getTotalPrice} = useProductsStore();
+const {getTotalPrice, clearCart} = useProductsStore();
+function handleCheckout() {
+    clearCart();
+
+}
   return (
     <div className="w-full md:w-3/4 xl:w-1/2 m-auto">
       <h1 className="text-center">Your Cart</h1>
@@ -47,7 +51,7 @@ const {getTotalPrice} = useProductsStore();
           <SecondaryButton label="Shop More" />
         </Link>
         <Link to="/checkoutSuccess">
-          <PrimaryButton label="Check Out" />
+          <PrimaryButton label="Check Out" onClick={handleCheckout} />
         </Link>
       </div>
     </div>

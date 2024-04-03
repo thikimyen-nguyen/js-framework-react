@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-export function PrimaryButton({label, onClick, size}) {
+export function PrimaryButton({label, onClick}) {
     return (
         <button className={`${styles.primaryButton} hover:bg-hover`}  onClick={onClick}>{label}</button>
     );
