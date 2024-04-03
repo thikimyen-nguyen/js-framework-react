@@ -28,7 +28,6 @@ export function ProductsList() {
           </div>
       )
   }
-  console.log(products)
 
   // Search
   
