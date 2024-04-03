@@ -67,7 +67,6 @@ const useProductsStore = create((set, get) => ({
 
       // Update local storage with the updated cart
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      console.log(updatedCart);
 
       return { ...state, cart: updatedCart };
     });
