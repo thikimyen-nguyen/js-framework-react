@@ -66,7 +66,7 @@ function handleAddToCart() {
                   price={singleProduct.price}
                   discountedPrice={singleProduct.discountedPrice}
                 />
-                <span className="ml-5 line-through text-white text-lg">
+                <span className="ml-5 line-through text-white text-sm">
                   Nok {singleProduct.price}
                 </span>
               </div>
@@ -74,12 +74,12 @@ function handleAddToCart() {
 
             <div className="m-auto my-5 flex items-center justify-between">
               {singleProduct.discountedPrice !== singleProduct.price ? (
-                <div className="text-2xl text-primary m-3">
-                  Nok {singleProduct.discountedPrice}
+                <div className="text-sm text-primary m-3">
+                  Nok <span className="text-xl">{singleProduct.discountedPrice}</span>
                 </div>
               ) : (
-                <div className="text-2xl text-primary">
-                  Nok {singleProduct.discountedPrice}
+                <div className="text-primary text-sm">
+                  Nok <span className="text-xl">{singleProduct.discountedPrice}</span>
                 </div>
               )}
               <div className="self-right">
