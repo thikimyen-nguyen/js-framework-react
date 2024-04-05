@@ -38,9 +38,9 @@ export function CartDetail() {
   return (
     <div className="w-full md:w-3/4 xl:w-1/2 m-auto">
       <h1 className="text-center">Your Cart</h1>
-      <div>
+      <div className="text-end">
         {cart && (
-          <SecondaryButton label="Remove All" onClick={handleClearCart} />
+            <button onClick={handleClearCart} className="border border-primary text-red bg-white text-sm rounded py-1 px-2">Remove All</button>
         )}
       </div>
       <div className="flex-col divide-y divide-primary mb-5">
