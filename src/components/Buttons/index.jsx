@@ -4,8 +4,8 @@ export function PrimaryButton({label, onClick}) {
         <button className={`${styles.primaryButton} hover:bg-hover`}  onClick={onClick}>{label}</button>
     );
 }
-export function SecondaryButton({label}) {
+export function SecondaryButton({label, onClick}) {
     return (
-        <button className={styles.secondaryButton} >{label}</button>
+        <button className={styles.secondaryButton} onClick={onClick} >{label}</button>
     );
 }
