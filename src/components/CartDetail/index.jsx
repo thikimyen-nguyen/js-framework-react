@@ -40,7 +40,12 @@ export function CartDetail() {
       <h1 className="text-center">Your Cart</h1>
       <div className="text-end">
         {cart && (
-            <button onClick={handleClearCart} className="border border-primary text-red bg-white text-sm rounded py-1 px-2">Remove All</button>
+          <button
+            onClick={handleClearCart}
+            className="border border-primary text-red bg-white text-sm rounded py-1 px-2"
+          >
+            Remove All
+          </button>
         )}
       </div>
       <div className="flex-col divide-y divide-primary mb-5">
@@ -52,15 +57,16 @@ export function CartDetail() {
           <p className="flex-1 my-5">Nok {getTotalPrice()}</p>
         </div>
       </div>
-
-      <div className="text-center">
-        <Link to="/">
-          <SecondaryButton label="Shop More" />
-        </Link>
-        <Link to="/checkoutSuccess">
-          <PrimaryButton label="Check Out" onClick={handleCheckout} />
-        </Link>
-      </div>
+      {cart && (
+        <div className="text-center">
+          <Link to="/">
+            <SecondaryButton label="Shop More" />
+          </Link>
+          <Link to="/checkoutSuccess">
+            <PrimaryButton label="Check Out" onClick={handleCheckout} />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
