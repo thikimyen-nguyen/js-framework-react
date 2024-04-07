@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { PrimaryButton } from '../Buttons';
+import { useState } from 'react';
 const schema = yup
     .object({
         fullName: yup
@@ -27,17 +28,22 @@ export function ContactForm() {
         register,
         handleSubmit,
         formState: { errors },
+        reset
       } = useForm({
         resolver: yupResolver(schema),
       });
-    
+      const [submitSuccess, setSubmitSuccess] = useState(false); 
     function onSubmit(data) {
         console.log(data);
+        reset();
+
+    setSubmitSuccess(true);
     }
 
     return (
         <div>
-            <h1>Contact Form</h1>
+            <h1 className='text-center'>Contact Form</h1>
+            {submitSuccess && <p className="text-black bg-green p-1">Your message was sent successfully!</p>}
             <form onSubmit={handleSubmit(onSubmit)} className="flex-col md:w-2/4 content-center mx-auto">
                 <div className="mb-4">
                     <label htmlFor="fullName" className="font-semibold">Full Name</label>
