@@ -19,9 +19,7 @@ function ProductCard({
         />
         <h2 className="mt-4 text-primary">{title}</h2>
         <div className="my-3 flex items-center">
-          <p className="m-2 text-lg font-medium">
-            Nok {discountedPrice}
-          </p>
+          <p className="m-2 text-lg font-medium">Nok {discountedPrice}</p>
           {discountedPrice !== price && (
             <p className="ml-5 line-through text-red text-sm">{price}</p>
           )}

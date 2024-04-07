@@ -77,15 +77,18 @@ const useProductsStore = create((set, get) => ({
     return cart ? cart.length : 0;
   },
   getTotalPrice: () => {
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    const cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart || cart.length === 0) {
       return 0;
     }
-    return cart.reduce((total, item) => total + (item.discountedPrice * item.quantity), 0).toFixed(2);
+    return cart
+      .reduce((total, item) => total + item.discountedPrice * item.quantity, 0)
+      .toFixed(2);
   },
   clearCart: () => {
-    set({ cart: [] }); 
-    localStorage.removeItem('cart'); 
-  },}));
+    set({ cart: [] });
+    localStorage.removeItem("cart");
+  },
+}));
 
 export default useProductsStore;
