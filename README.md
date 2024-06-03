@@ -1,4 +1,5 @@
 # Bshop - An eCom store
+![image](./bshop.png)
 
 This is a school project to get familiar with React. The site is built with React, Tailwind to create a basic cart function.
 
